@@ -31,7 +31,7 @@ class App extends Component {
         name: '',
         email: '',
         entries: 0,
-        joined: '' // js will create new date when joined gets executed
+        joined: '' 
       }
     }
   }
@@ -42,7 +42,7 @@ class App extends Component {
       name: data.name,
       email: data.email,
       entries: data.entries,
-      joined: data.joined // js will create new date when joined gets executed
+      joined: data.joined 
     }})
   }
 
@@ -66,7 +66,7 @@ class App extends Component {
 
 
   onInputChange = (event) => {
-    console.log(event.target.value);
+    this.setState({input : event.target.value})
   }
 
   onButtonSubmit = () => {
@@ -142,6 +142,7 @@ class App extends Component {
           : (
             route === 'signin' 
             ? <SignIn
+                loadUser= {this.loadUser}
                 onRouteChange = {this.onRouteChange}
               />
             : <Register
