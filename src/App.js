@@ -13,7 +13,7 @@ import Clarifai from 'clarifai';
 
 //You must add your own API key here from Clarifai.
 const app = new Clarifai.App({
-  apiKey: 'bf69d2b778fb45fcaba51001013f5d07'
+  apiKey: ''
  });
 
 
