@@ -11,11 +11,12 @@ import ParticlesBg from 'particles-bg';
 import Clarifai from 'clarifai';
 
 
+
 //You must add your own API key here from Clarifai.
 const app = new Clarifai.App({
-  apiKey: ''
+  apiKey: process.env.REACT_APP_API_KEY
  });
-
+ 
 
 class App extends Component {
   constructor () {
@@ -82,9 +83,10 @@ class App extends Component {
     // .predict(Clarifai.FACE_DETECT_MODEL, this.state.input)
     // to:
     // .predict('53e1df302c079b3db8a0a36033ed2d15', this.state.input)
-        Clarifai.FACE_DETECT_MODEL,
+        'face-detection',
         this.state.input)
       .then(response => {
+        console.log('hi', response)
         if (response) {
           fetch('http://localhost:3000/image', {
             method: 'put',
